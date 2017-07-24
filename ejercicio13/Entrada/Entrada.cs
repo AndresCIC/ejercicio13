@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ejercicio13
+namespace ejercicio13.Entrada
 {
-    public class Class1
+    public class Entrada
     {
+        public long Id { get; set; }
     }
 }
