@@ -9,6 +9,7 @@ namespace ejercicio13Test
     public class EntradaControllerIntegrationTest
     {
         private IEntradaController entradaController;
+        private EntradaDTO entradaDTO;
 
         [TestInitialize]
         public void Initialize()
@@ -17,27 +18,48 @@ namespace ejercicio13Test
             unityContainer.RegisterType<IEntradaRepository, EntradaRepository>();
             unityContainer.RegisterType<IEntradaService, EntradaService>();
             unityContainer.RegisterType<IEntradaConverter, EntradaConverter>();
-
             unityContainer.RegisterType<IEntradaController, EntradaController>();
-
-
             entradaController = unityContainer.Resolve<IEntradaController>();
+            entradaDTO = new EntradaDTO();
+            entradaDTO.Id = 5;
+            entradaController.Create(entradaDTO);
         }
 
 
         [TestMethod]
         public void CreateMethodTest()
         {
-            EntradaDTO entradaDTO = new EntradaDTO();
-            entradaController.Create(entradaDTO);
+            entradaController.Create(entradaDTO);    
+            Assert.AreNotEqual(-1, entradaController.List().IndexOf(entradaDTO));
         }
 
         [TestMethod]
         public void ReadMethodTest()
         {
-            EntradaDTO entradaDTO = new EntradaDTO();
-            entradaDTO.Id = 1;
-            entradaController.Read(entradaDTO.Id);
+            Assert.IsNotNull(entradaController.Read(entradaDTO.Id));
+        }
+
+        [TestMethod]
+        public void DeleteMethodTest()
+        {
+            entradaController.Delete(entradaDTO.Id);
+            Assert.AreEqual(-1, entradaController.List().IndexOf(entradaDTO));
+        }
+
+        [TestMethod]
+        public void ListMethodTest()
+        {
+            Assert.IsTrue(entradaController.List().Count > 0);
+        }
+
+        [TestMethod]
+        public void UpdateMethodTest()
+        {
+            entradaDTO.Id = 6;
+            entradaController.Update(entradaDTO);
+            Assert.AreEqual(6, entradaController.Read(entradaDTO.Id).Id);
+
+
         }
 
     }

@@ -8,16 +8,16 @@ namespace ejercicio13
 {
     public class VentaConverter : IVentaConverter
     {
-        public Entrada DTOToEntity(EntradaDTO ventaDTO)
+        public Venta DTOToEntity(VentaDTO ventaDTO)
         {
-            Entrada resultado = new Entrada();
+            Venta resultado = new Venta();
             resultado.Id = ventaDTO.Id;
             return resultado;
         }
 
-        public EntradaDTO EntityToDTO(Entrada venta)
+        public VentaDTO EntityToDTO(Venta venta)
         {
-            EntradaDTO resultado = new EntradaDTO();
+            VentaDTO resultado = new VentaDTO();
             resultado.Id = venta.Id;
             return resultado;
             

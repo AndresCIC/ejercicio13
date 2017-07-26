@@ -18,9 +18,9 @@ namespace ejercicio13
 
         }
 
-        public void Create(EntradaDTO ventaDTO)
+        public void Create(VentaDTO ventaDTO)
         {
-            Entrada venta = ventaConverter.DTOToEntity(ventaDTO);
+            Venta venta = ventaConverter.DTOToEntity(ventaDTO);
             ventaService.Create(venta);
         }
 
@@ -29,30 +29,32 @@ namespace ejercicio13
             ventaService.Delete(id);
         }
 
-        public IList<EntradaDTO> List()
+        public IList<VentaDTO> List()
         {
-            IList<EntradaDTO> listaResultado = new List<EntradaDTO>();
-            IList<Entrada> listaVenta = ventaService.List();
+            IList<VentaDTO> listaResultado = new List<VentaDTO>();
+            IList<Venta> listaVenta = ventaService.List();
 
-            foreach (Entrada v in listaVenta)
+            foreach (Venta v in listaVenta)
             {
-                EntradaDTO ventaDTO = ventaConverter.EntityToDTO(v);
+                VentaDTO ventaDTO = ventaConverter.EntityToDTO(v);
                 listaResultado.Add(ventaDTO);
             }
             return listaResultado;
 
         }
 
-        public EntradaDTO Read(long id)
+        public VentaDTO Read(long id)
         {
-            Entrada venta = ventaService.Read(id);
-            EntradaDTO ventaTDO = ventaConverter.EntityToDTO(venta);
+            Venta venta = ventaService.Read(id);
+            VentaDTO ventaTDO = ventaConverter.EntityToDTO(venta);
             return ventaTDO;
         }
 
-        public void Update(EntradaDTO ventaDTO)
+        public void Update(VentaDTO ventaDTO)
         {
-            Entrada venta = ventaConverter.DTOToEntity(ventaDTO);
+            Venta
+                
+                venta = ventaConverter.DTOToEntity(ventaDTO);
             ventaService.Update(venta);
         }
     }

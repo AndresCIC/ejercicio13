@@ -8,7 +8,7 @@ namespace ejercicio13
 {
     public class VentaRepository : IVentaRepository
     {
-        public void Create(Entrada venta)
+        public void Create(Venta venta)
         {
             throw new NotImplementedException();
         }
@@ -18,17 +18,17 @@ namespace ejercicio13
             throw new NotImplementedException();
         }
 
-        public IList<Entrada> List()
+        public IList<Venta> List()
         {
             throw new NotImplementedException();
         }
 
-        public Entrada Read(long id)
+        public Venta Read(long id)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(Entrada Venta)
+        public void Update(Venta Venta)
         {
             throw new NotImplementedException();
         }

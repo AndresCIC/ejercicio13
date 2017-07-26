@@ -8,7 +8,7 @@ namespace ejercicio13
 {
     public interface IVentaConverter
     {
-        EntradaDTO EntityToDTO(Entrada venta);
-        Entrada DTOToEntity(EntradaDTO ventaDTO);
+        VentaDTO EntityToDTO(Venta venta);
+        Venta DTOToEntity(VentaDTO ventaDTO);
     }
 }

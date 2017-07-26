@@ -25,7 +25,7 @@ namespace ejercicio13Test
         [TestMethod]
         public void CreateMethodTest()
         {
-            EntradaDTO ventaDTO = new EntradaDTO();
+            VentaDTO ventaDTO = new VentaDTO();
             ventaController.Create(ventaDTO);
 
         }

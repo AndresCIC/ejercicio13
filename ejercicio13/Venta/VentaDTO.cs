@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ejercicio13
 {
-    public class EntradaDTO
+    public class VentaDTO
     {
         public long Id { get; set; }
     }

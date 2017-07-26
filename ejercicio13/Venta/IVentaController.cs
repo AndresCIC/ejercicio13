@@ -8,10 +8,10 @@ namespace ejercicio13
 {
     public interface IVentaController
     {
-        void Create(EntradaDTO ventaDTO);
-        EntradaDTO Read(long id);
-        IList<EntradaDTO> List();
-        void Update(EntradaDTO ventaDTO);
+        void Create(VentaDTO ventaDTO);
+        VentaDTO Read(long id);
+        IList<VentaDTO> List();
+        void Update(VentaDTO ventaDTO);
 
         void Delete(long id);
 
